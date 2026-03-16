@@ -114,8 +114,14 @@ for factor_one = 0.05:0.01:1.95 %0.05:0.01:1.95 %0.05:0.01:1.95 %0.05:0.01:1.95%
 
 % for synchro plot (used in to generate columns in Fig. 2)
 %{
-%factor_p = [2.0, 1.0, 0.5];
-factor_p = [1.25, 1.0, 0.8];
+v0pk = v_0__plus_k_base;
+v0m = v_0__minus_base;
+t_run = 30;                 % min
+n_datapoints = 300;
+dynamic_equil = false;
+colors = [[25 25 112]; [70 130 180]; [175 219 245]]/255;
+factor_p = [2.0, 1.0, 0.5];
+%factor_p = [1.25, 1.0, 0.8];
 fig_synchro = figure('Position',[100 48 480 640], 'Units', 'normalized');
 s1 = subplot(2,1,1);
 s2 = subplot(2,1,2);
@@ -342,6 +348,7 @@ ylabel("Time (minutes)", 'FontSize', 14);
 xlabel("Position (um)", 'FontSize', 14);
 xlim([-10 10]);
 ylim([0 t_run_actual]);
+%}
 
 % Plot relevant simulation stats as they evolve over time
 comp = figure('Position',[100 48 1120 550], 'Units', 'normalized');
@@ -490,6 +497,7 @@ drawnow;
 if i_c == 3
    %exportgraphics(gcf, "plot_plusLDep_2.0_1.0_0.5.pdf")   
    exportgraphics(gcf, "plot_noLDep_1.25_1.0_0.8.pdf")
+end
 end
 %}
 %%
