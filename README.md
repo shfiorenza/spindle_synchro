@@ -33,4 +33,6 @@ To create the contour and cross-sectional plots which appear in Figs. 3, 5, S1, 
 To recreate these plots, perform a two-dimensional parameter scan of the parameters `A_pk` and `A_m`, `l_0__plus_k` and `L_0__minus`, or `v_0__plus_k_base` and `v_0__minus_base` and set `i_dir` in the analysis script to 2, 1, or 3, respectively. 
 The script is set up for a 192 by 192 scan, which will be the output of the default for loop in `simulation.m` 
 
+To create Movs. S1-S4, the `simulation_movie.m` script was used. To recreate these movies, simply select the perturbation type and run the script. Peturbation type corresponds to movie number, e.g., setting `perturb_type = 2` will recreate Mov. S2. 
+
 To create all other plots which appear in the manuscript, the `analysis_plots.m` script was used. Each block of code is labeled with the figure it was used to create. 
